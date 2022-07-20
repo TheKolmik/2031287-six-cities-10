@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Makeev Alex](https://up.htmlacademy.ru/react/10/user/2031287).
-* Наставник: `Неизвестно`.
+* Наставник: [`Александр Григорьев`](https://htmlacademy.ru/profile/fuckhtml).
 
 ---
 
