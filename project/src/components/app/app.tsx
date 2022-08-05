@@ -5,7 +5,7 @@ import LoginPage from '../../pages/login-page/login-page';
 // import MainEmptyPage from '../../pages/main-empty-page/main-empty-page';
 import MainPage from '../../pages/main-page/main-page';
 // import PropertyNotLoggedPage from '../../pages/property-not-logged-page/property-not-logged';
-import Property from '../../pages/property-page/property-page';
+import PropertyPage from '../../pages/property-page/property-page';
 import Page404 from '../404-page/404-page';
 import {AppRoute, AuthorizationStatus} from '../../const';
 import PrivateRoute from '../../components/private-route';
@@ -37,7 +37,7 @@ function App({places}: AppScreenProps): JSX.Element {
         />
         <Route
           path={AppRoute.Room}
-          element={<Property/>}
+          element={<PropertyPage/>}
         />
         <Route
           path="*"
