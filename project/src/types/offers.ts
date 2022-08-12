@@ -1,6 +1,7 @@
 export type Offer = {
-  price: number[],
-  name: string[],
-  type: string[],
-  src: string[],
+  id: number,
+  price: number,
+  name: string,
+  type: string,
+  src: string,
 };

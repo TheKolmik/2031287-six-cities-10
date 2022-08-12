@@ -28,7 +28,7 @@ function FlatCard ({offer}: Props): JSX.Element {
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to="offer">
-          <img className="place-card__image" src={src[0]} width="260" height="200" alt="Place"/>
+          <img className="place-card__image" src={src} width="260" height="200" alt="Place"/>
         </Link>
       </div>
       <div className="place-card__info">

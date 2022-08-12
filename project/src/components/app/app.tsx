@@ -44,7 +44,7 @@ function App({places, offers}: AppScreenProps): JSX.Element {
           }
         />
         <Route
-          path={AppRoute.Room}
+          path={AppRoute.Offer}
           element={<PropertyPage/>}
         />
         <Route
