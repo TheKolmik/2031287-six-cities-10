@@ -1,49 +1,40 @@
-import React from 'react';
+// import React from 'react';
 import {Link} from 'react-router-dom';
-import { Offers } from '../../types/offers';
-import {useState} from 'react';
+import { Offer } from '../../types/offers';
+// import {useState} from 'react';
 
-type OffersProps = {
-  offers: Offers;
+type Props = {
+  offer: Offer;
 };
 
-function FlatCard (props: OffersProps): JSX.Element {
-  const {offers} = props;
-  const {price, name, type, src} = offers;
+function FlatCard ({offer}: Props): JSX.Element {
+  const { price, name, type, src} = offer;
 
-  const [selectedCard, setSelectedCard] = useState(offers);
+  // const [selectedCard, setSelectedCard] = useState(offers);
+
 
   return (
 
-  {offers.map((point, id) => {
-
-    const keyPrice = `${id}-${point.price}`;
-    const keyName = `${id}-${point.name}`;
-    const keyType = `${id}-${point.type}`;
-    const keySrc = `${id}-${point.src}`;
-
-    return (
-
     <article onMouseOver={() => {
-      setSelectedCard({
-        ...selectedCard,
-      });
-      console.log(selectedCard);
+      // setSelectedCard({
+      //   ...selectedCard,
+      // });
+      // console.log(selectedCard);
     }} className="cities__card place-card"
     >
 
       <div className="place-card__mark">
         <span>Premium</span>
       </div>
-      <div key={keySrc} className="cities__image-wrapper place-card__image-wrapper">
+      <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to="offer">
-          <img className="place-card__image" src={point.src} width="260" height="200" alt="Place"/>
+          <img className="place-card__image" src={src[0]} width="260" height="200" alt="Place"/>
         </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
-          <div key={keyPrice} className="place-card__price">
-            <b className="place-card__price-value">&euro;{point.price}</b>
+          <div className="place-card__price">
+            <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button button" type="button">
@@ -59,19 +50,12 @@ function FlatCard (props: OffersProps): JSX.Element {
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 key={keyName} className="place-card__name">
-          <Link to="offer">{point.name}</Link>
+        <h2 className="place-card__name">
+          <Link to="offer">{name}</Link>
         </h2>
-        <p key={keyType} className="place-card__type">{point.type}</p>
-
+        <p className="place-card__type">{type}</p>
       </div>
-
-
     </article>
-
-  );
-
-  })}
 
   );
 }

@@ -1,11 +1,6 @@
-
-export type Offers = {
+export type Offer = {
   price: number[],
   name: string[],
   type: string[],
   src: string[],
 };
-
-export type Offer = Offers;
-
-export type Rooms = Offer[];

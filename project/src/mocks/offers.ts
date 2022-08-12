@@ -1,6 +1,6 @@
-import { Rooms } from '../types/offers';
+import { Offer } from '../types/offers';
 
-export const offers: Rooms = [
+export const offers: Offer[] = [
   {
     price: [120,110,100,90,80],
     name: ['Barococo Place','Modern Castle','Greenline Ap.','Quiet Place','Modern flat'],
