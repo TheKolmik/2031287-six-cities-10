@@ -9,12 +9,12 @@ import PropertyPage from '../../pages/property-page/property-page';
 import Page404 from '../404-page/404-page';
 import {AppRoute, AuthorizationStatus} from '../../const';
 import PrivateRoute from '../../components/private-route';
-import {Rooms} from '../../types/offers';
+import {Offer} from '../../types/offers';
 
 
 type AppScreenProps = {
   places: number;
-  offers: Rooms;
+  offers: Offer[];
 }
 
 function App({places, offers}: AppScreenProps): JSX.Element {
@@ -44,7 +44,7 @@ function App({places, offers}: AppScreenProps): JSX.Element {
           }
         />
         <Route
-          path={AppRoute.Room}
+          path={AppRoute.Offer}
           element={<PropertyPage/>}
         />
         <Route

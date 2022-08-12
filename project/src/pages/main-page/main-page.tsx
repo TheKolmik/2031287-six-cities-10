@@ -1,10 +1,10 @@
 import Logo from '../../components/Logo/Logo';
-import {Rooms} from '../../types/offers';
+import {Offer} from '../../types/offers';
 import CardList from '../../components/card-list/card-list';
 
 type MainPageProps = {
   places: number;
-  offers: Rooms;
+  offers: Offer[];
 }
 
 function MainPage ({places, offers}: MainPageProps): JSX.Element {
