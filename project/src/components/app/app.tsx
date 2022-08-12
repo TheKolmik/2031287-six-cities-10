@@ -9,19 +9,27 @@ import PropertyPage from '../../pages/property-page/property-page';
 import Page404 from '../404-page/404-page';
 import {AppRoute, AuthorizationStatus} from '../../const';
 import PrivateRoute from '../../components/private-route';
+import {Rooms} from '../../types/offers';
 
 
 type AppScreenProps = {
   places: number;
+  offers: Rooms;
 }
 
-function App({places}: AppScreenProps): JSX.Element {
+function App({places, offers}: AppScreenProps): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage places={places} />}
+          element={
+            <MainPage
+              places={places}
+              offers={offers}
+            />
+          }
         />
         <Route
           path={AppRoute.Login}
