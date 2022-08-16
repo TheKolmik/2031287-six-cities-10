@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import { Offer } from '../../types/offers';
-// import {useState} from 'react';
+import {useState} from 'react';
 
 type Props = {
   offer: Offer;
@@ -10,16 +10,15 @@ type Props = {
 function FlatCard ({offer}: Props): JSX.Element {
   const { price, name, type, src} = offer;
 
-  // const [selectedCard, setSelectedCard] = useState(offers);
+  const [selectedCard, setSelectedCard] = useState(offer);
 
 
   return (
 
     <article onMouseOver={() => {
-      // setSelectedCard({
-      //   ...selectedCard,
-      // });
-      // console.log(selectedCard);
+      setSelectedCard({
+        ...selectedCard,
+      });
     }} className="cities__card place-card"
     >
 

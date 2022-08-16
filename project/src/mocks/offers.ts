@@ -15,24 +15,25 @@ export const offers: Offer[] = [
     type: 'Castle',
     src: './img/apartment-02.jpg',
   },
-  // {
-  //   price: [120,110,100,90,80],
-  //   name: ['Barococo Place','Modern Castle','Greenline Ap.','Quiet Place','Modern flat'],
-  //   type: ['Castle','Castle','Apartman','Apartman','Modern flat'],
-  //   src: ['img/apartment-01.jpg','img/rapartment-02.jpg','img/apartment-small-03.jpg','img/apartment-small-04.jpg','img/room.jpg'],
-  // },
-  // {
-  //   price: [120,110,100,90,80],
-  //   name: ['Barococo Place','Modern Castle','Greenline Ap.','Quiet Place','Modern flat'],
-  //   type: ['Castle','Castle','Apartman','Apartman','Modern flat'],
-  //   src: ['img/apartment-01.jpg','img/rapartment-02.jpg','img/apartment-small-03.jpg','img/apartment-small-04.jpg','img/room.jpg'],
-
-  // },
-  // {
-  //   price: [120,110,100,90,80],
-  //   name: ['Barococo Place','Modern Castle','Greenline Ap.','Quiet Place','Modern flat'],
-  //   type: ['Castle','Castle','Apartman','Apartman','Modern flat'],
-  //   src: ['img/apartment-01.jpg','img/rapartment-02.jpg','img/apartment-small-03.jpg','img/apartment-small-04.jpg','img/room.jpg'],
-  // },
-
+  {
+    id: 2,
+    price: 100,
+    name: 'Greenline Ap.',
+    type: 'Apartment',
+    src: './img/apartment-03.jpg',
+  },
+  {
+    id: 3,
+    price: 90,
+    name: 'Quiet Place',
+    type: 'Apartment',
+    src: './img/apartment-small-04.jpg',
+  },
+  {
+    id: 4,
+    price: 80,
+    name: 'Modern flat',
+    type: 'Modern flat',
+    src: './img/room.jpg',
+  },
 ];

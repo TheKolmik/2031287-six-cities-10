@@ -7,8 +7,7 @@ import MainPage from '../../pages/main-page/main-page';
 // import PropertyNotLoggedPage from '../../pages/property-not-logged-page/property-not-logged';
 import PropertyPage from '../../pages/property-page/property-page';
 import Page404 from '../404-page/404-page';
-import {AppRoute, AuthorizationStatus} from '../../const';
-import PrivateRoute from '../../components/private-route';
+import {AppRoute} from '../../const';
 import {Offer} from '../../types/offers';
 
 
@@ -38,9 +37,11 @@ function App({places, offers}: AppScreenProps): JSX.Element {
         <Route
           path={AppRoute.Favorites}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <FavoritesPage/>
-            </PrivateRoute>
+            // <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <FavoritesPage
+              offers={offers}
+            />
+            /* </PrivateRoute> */
           }
         />
         <Route
