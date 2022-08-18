@@ -7,21 +7,30 @@ import MainPage from '../../pages/main-page/main-page';
 // import PropertyNotLoggedPage from '../../pages/property-not-logged-page/property-not-logged';
 import PropertyPage from '../../pages/property-page/property-page';
 import Page404 from '../404-page/404-page';
-import {AppRoute, AuthorizationStatus} from '../../const';
-import PrivateRoute from '../../components/private-route';
+import {AppRoute} from '../../const';
+import {Offer} from '../../types/offers';
+import {StarRating} from '../../types/rating-star';
 
 
 type AppScreenProps = {
   places: number;
+  offers: Offer[];
+  ratings: StarRating[];
 }
 
-function App({places}: AppScreenProps): JSX.Element {
+function App({places, offers, ratings}: AppScreenProps): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage places={places} />}
+          element={
+            <MainPage
+              places={places}
+              offers={offers}
+            />
+          }
         />
         <Route
           path={AppRoute.Login}
@@ -30,14 +39,20 @@ function App({places}: AppScreenProps): JSX.Element {
         <Route
           path={AppRoute.Favorites}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <FavoritesPage/>
-            </PrivateRoute>
+            // <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <FavoritesPage
+              offers={offers}
+            />
+            /* </PrivateRoute> */
           }
         />
         <Route
-          path={AppRoute.Room}
-          element={<PropertyPage/>}
+          path={AppRoute.Offer}
+          element={
+            <PropertyPage
+              ratings={ratings}
+            />
+          }
         />
         <Route
           path="*"

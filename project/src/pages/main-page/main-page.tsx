@@ -1,11 +1,14 @@
-import FlatCard from '../../components/flat-card/flat-card';
 import Logo from '../../components/Logo/Logo';
+import {Offer} from '../../types/offers';
+import CardList from '../../components/card-list/card-list';
 
 type MainPageProps = {
   places: number;
+  offers: Offer[];
 }
 
-function MainPage ({places}: MainPageProps): JSX.Element {
+function MainPage ({places, offers}: MainPageProps): JSX.Element {
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -91,13 +94,9 @@ function MainPage ({places}: MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                <FlatCard/>
-                <FlatCard/>
-                <FlatCard/>
-                <FlatCard/>
-                <FlatCard/>
-              </div>
+              <CardList
+                offers={offers}
+              />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
