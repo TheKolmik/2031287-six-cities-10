@@ -25,29 +25,23 @@ function FavoritesList ({offers}: Flats): JSX.Element {
             {offers.map((offer) => {
               const {id} = offer;
 
-
               return (
 
                 <div key={id}>
                   <FavoriteCard
                     offer={offer}
                   />
-
                 </div>
 
               );
-
             })}
 
           </div>
-
-
         </li>
       </ul>
     </section>
 
   );
-
 }
 
 export default FavoritesList;

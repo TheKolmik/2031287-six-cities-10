@@ -14,10 +14,8 @@ function FavoriteCard ({offer}: Props): JSX.Element {
     <article className="favorites__card place-card">
       <div className="place-card__mark">
         <Link to="/offer"><span>Premium</span></Link>
-
       </div>
       <div className="favorites__image-wrapper place-card__image-wrapper">
-
         <Link to="/offer"><img className="place-card__image" src={src} width="150" height="110" alt="Place"/></Link>
         <br/>
         <br/>
@@ -25,9 +23,7 @@ function FavoriteCard ({offer}: Props): JSX.Element {
       </div>
       <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
-
           <div className="place-card__price">
-
             <Link to="/offer"><b className="place-card__price-value">&euro;{price}</b></Link>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
@@ -37,7 +33,6 @@ function FavoriteCard ({offer}: Props): JSX.Element {
             </svg>
             <span className="visually-hidden">In bookmarks</span>
           </button>
-
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">

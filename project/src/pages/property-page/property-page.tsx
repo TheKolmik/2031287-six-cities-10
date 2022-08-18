@@ -1,7 +1,13 @@
 import Logo from '../../components/Logo/Logo';
 import ReviewForm from '../../components/form-for-comments/form-for-comments';
+import {StarRating} from '../../types/rating-star';
+import RatingStar from '../../components/rating-star/rating-star';
 
-function PropertyPage (): JSX.Element {
+type Props = {
+  ratings: StarRating [];
+}
+
+function PropertyPage ({ratings}: Props): JSX.Element {
   return (
     <div className="page">
       <header className="header">
@@ -175,7 +181,9 @@ function PropertyPage (): JSX.Element {
                   </li>
                 </ul>
 
-                <ReviewForm/>
+                <ReviewForm
+                  ratings={ratings}
+                />
               </section>
             </div>
           </div>

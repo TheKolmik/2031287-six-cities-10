@@ -9,14 +9,16 @@ import PropertyPage from '../../pages/property-page/property-page';
 import Page404 from '../404-page/404-page';
 import {AppRoute} from '../../const';
 import {Offer} from '../../types/offers';
+import {StarRating} from '../../types/rating-star';
 
 
 type AppScreenProps = {
   places: number;
   offers: Offer[];
+  ratings: StarRating[];
 }
 
-function App({places, offers}: AppScreenProps): JSX.Element {
+function App({places, offers, ratings}: AppScreenProps): JSX.Element {
 
   return (
     <BrowserRouter>
@@ -46,7 +48,11 @@ function App({places, offers}: AppScreenProps): JSX.Element {
         />
         <Route
           path={AppRoute.Offer}
-          element={<PropertyPage/>}
+          element={
+            <PropertyPage
+              ratings={ratings}
+            />
+          }
         />
         <Route
           path="*"

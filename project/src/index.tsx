@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import { offers } from './mocks/offers';
+import { ratingStar } from './mocks/rating-star';
 
 const Setting = {
   PLACES: 5,
@@ -16,6 +17,7 @@ root.render(
     <App
       places = {Setting.PLACES}
       offers = {offers}
+      ratings = {ratingStar}
     />
   </React.StrictMode>,
 );

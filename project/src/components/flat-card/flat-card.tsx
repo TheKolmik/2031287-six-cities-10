@@ -12,7 +12,6 @@ function FlatCard ({offer}: Props): JSX.Element {
 
   const [selectedCard, setSelectedCard] = useState(offer);
 
-
   return (
 
     <article onMouseOver={() => {
