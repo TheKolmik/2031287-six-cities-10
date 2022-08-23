@@ -5,6 +5,8 @@ type Props = {
   ratings: StarRating;
 }
 
+// разобрать звездочки
+
 function RatingStar ({ratings}: Props): JSX.Element {
   const {star, value} = ratings;
   const [rating, setRating] = useState(0);

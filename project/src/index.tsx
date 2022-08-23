@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import { offers } from './mocks/offers';
 import { ratingStar } from './mocks/rating-star';
+import { POINTS, CITY } from './mocks/coordinates';
 
 const Setting = {
   PLACES: 5,
@@ -18,6 +19,8 @@ root.render(
       places = {Setting.PLACES}
       offers = {offers}
       ratings = {ratingStar}
+      POINTS = {POINTS}
+      city = {CITY}
     />
   </React.StrictMode>,
 );

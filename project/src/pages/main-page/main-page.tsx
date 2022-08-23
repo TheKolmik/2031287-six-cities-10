@@ -1,13 +1,22 @@
 import Logo from '../../components/Logo/Logo';
 import {Offer} from '../../types/offers';
 import CardList from '../../components/card-list/card-list';
+import {Points, City} from '../../types/coordinates';
+import Map from '../../components/map/map';
+import { CITY } from '../../mocks/coordinates';
+import {useState} from 'react';
 
 type MainPageProps = {
   places: number;
   offers: Offer[];
+  POINTS: Points [];
+  city: City;
 }
 
-function MainPage ({places, offers}: MainPageProps): JSX.Element {
+function MainPage ({places, offers, POINTS, city}: MainPageProps): JSX.Element {
+  const [selectedCard, setSelectedCar] = useState({});
+
+  const onListItemHover = (listItemName) => {};
 
   return (
     <div className="page page--gray page--main">
@@ -96,10 +105,16 @@ function MainPage ({places, offers}: MainPageProps): JSX.Element {
               </form>
               <CardList
                 offers={offers}
+                onListItemHover={onListItemHover}
               />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map
+                  POINTS={POINTS}
+                  city={CITY}
+                />
+              </section>
             </div>
           </div>
         </div>
