@@ -14,9 +14,11 @@ type MainPageProps = {
 }
 
 function MainPage ({places, offers, POINTS, city}: MainPageProps): JSX.Element {
-  const [selectedCard, setSelectedCar] = useState({});
+  const [hoveredCard, setHoveredCard] = useState<Offer | null>(null);
 
-  const onListItemHover = (listItemName) => {};
+  const handleCardHover = (offer: Offer | null) => {
+    setHoveredCard(offer);
+  };
 
   return (
     <div className="page page--gray page--main">
@@ -105,14 +107,15 @@ function MainPage ({places, offers, POINTS, city}: MainPageProps): JSX.Element {
               </form>
               <CardList
                 offers={offers}
-                onListItemHover={onListItemHover}
+                onCardHover={handleCardHover}
               />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map">
                 <Map
-                  POINTS={POINTS}
+                  points={POINTS}
                   city={CITY}
+                  activePoint={hoveredCard}
                 />
               </section>
             </div>

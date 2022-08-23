@@ -5,22 +5,23 @@ import {useState} from 'react';
 
 type Props = {
   offer: Offer;
+  onHover: (offer: Offer | null) => void
 };
 
-function FlatCard ({offer}: Props): JSX.Element {
+function FlatCard ({offer, onHover}: Props): JSX.Element {
   const { price, name, type, src} = offer;
 
-  const [selectedCard, setSelectedCard] = useState(offer);
+  const handleMouseEnter = () => {
+    onHover(offer);
+  };
+
+  const handleMouseLeave = () => {
+    onHover(null);
+  };
 
   return (
 
-    <article onMouseOver={() => {
-      setSelectedCard({
-        ...selectedCard,
-      });
-    }} className="cities__card place-card"
-    >
-
+    <article onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="cities__card place-card">
       <div className="place-card__mark">
         <span>Premium</span>
       </div>
