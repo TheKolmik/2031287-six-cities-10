@@ -4,13 +4,15 @@ import {useEffect, useRef} from 'react';
 import useMap from '../../hooks/useMap/useMap';
 import {City, Points} from '../../types/coordinates';
 import {URL_MARKER_DEFAULT, URL_MARKER_CURRENT} from '../../mocks/map-markers';
+import { Offer } from '../../types/offers';
 
 type Props = {
   city: City,
-  POINTS: Points [],
+  points: Points [],
+  activePoint: Offer | null,
 }
 
-function Map ({POINTS, city}: Props): JSX.Element {
+function Map ({points, city, activePoint}: Props): JSX.Element {
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
@@ -28,20 +30,20 @@ function Map ({POINTS, city}: Props): JSX.Element {
   });
 
   useEffect (() => {
-    if(map) {
-      POINTS.forEach((point) => {
+    if (map) {
+      points.forEach((point) => {
         leaflet
           .marker({
             lat: point.lat,
             lng: point.lng,
           },{
-            icon: defaultCustomIcon,
+            icon: point.id === activePoint?.id ? currentCustomIcon : defaultCustomIcon,
           }
 
           ).addTo(map);
       });
     }
-  }, [map, POINTS]);
+  }, [map, points, activePoint]);
 
   return (
     <div
