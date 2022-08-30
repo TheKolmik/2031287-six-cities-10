@@ -14,6 +14,8 @@ type MainPageProps = {
 }
 
 function MainPage ({places, offers, POINTS, city}: MainPageProps): JSX.Element {
+
+  // Можно вот это запсиать в функцию и передать в property-page чтобы не писать заного?
   const [hoveredCard, setHoveredCard] = useState<Offer | null>(null);
 
   const handleCardHover = (offer: Offer | null) => {
@@ -106,6 +108,7 @@ function MainPage ({places, offers, POINTS, city}: MainPageProps): JSX.Element {
                 </ul>
               </form>
               <CardList
+              // первое это пропс а второе это точно мы туда передаем? т.е. всторое это название параметра который чтото содержит?
                 offers={offers}
                 onCardHover={handleCardHover}
               />

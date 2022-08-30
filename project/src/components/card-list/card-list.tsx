@@ -1,7 +1,6 @@
 import FlatCard from '../../components/flat-card/flat-card';
 import { Offer } from '../../types/offers';
-import {MouseEvent, useEffect, useState} from 'react';
-import {Points} from '../../types/coordinates';
+import {useEffect, useState} from 'react';
 
 type Flats = {
   offers: Offer[];

@@ -11,3 +11,10 @@ export type City = {
   lng: number,
   zoom: number
 }
+
+export type NearPlaces = {
+  id: number,
+  title: string,
+  lat: number,
+  lng: number,
+}

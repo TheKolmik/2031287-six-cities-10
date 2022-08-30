@@ -47,7 +47,7 @@ function Map ({points, city, activePoint}: Props): JSX.Element {
 
   return (
     <div
-      style={{height: '500px'}}
+      style={{height: '100%'}}
       ref={mapRef}
     >
     </div>

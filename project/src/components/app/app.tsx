@@ -10,7 +10,7 @@ import Page404 from '../404-page/404-page';
 import {AppRoute} from '../../const';
 import {Offer} from '../../types/offers';
 import {StarRating} from '../../types/rating-star';
-import {Points, City} from '../../types/coordinates';
+import {Points, City, NearPlaces} from '../../types/coordinates';
 import { CITY } from '../../mocks/coordinates';
 
 
@@ -20,9 +20,10 @@ type AppScreenProps = {
   ratings: StarRating[];
   POINTS: Points [];
   city: City;
+  nearPlaces: NearPlaces [];
 }
 
-function App({places, offers, ratings, POINTS, city}: AppScreenProps): JSX.Element {
+function App({places, offers, ratings, POINTS, city, nearPlaces}: AppScreenProps): JSX.Element {
 
   return (
     <BrowserRouter>
@@ -57,6 +58,9 @@ function App({places, offers, ratings, POINTS, city}: AppScreenProps): JSX.Eleme
           element={
             <PropertyPage
               ratings={ratings}
+              nearPoints={nearPlaces}
+              offers={offers}
+              city={city}
             />
           }
         />

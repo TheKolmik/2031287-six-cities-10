@@ -3,7 +3,7 @@ import {StarRating} from '../../types/rating-star';
 import RatingStar from '../rating-star/rating-star';
 
 type Props = {
-  ratings: StarRating []
+  ratings: StarRating [];
 }
 
 function ReviewForm ({ratings}: Props): JSX.Element {
@@ -16,9 +16,14 @@ function ReviewForm ({ratings}: Props): JSX.Element {
     setComment(e.target.value);
   };
 
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    console.log('Данные формы', comment);
+  };
 
   return (
-    <form className="reviews__form form" action="#" method="post">
+    <form onSubmit={handleSubmit} className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
 
       <div className="reviews__rating-form form__rating">
@@ -50,10 +55,12 @@ function ReviewForm ({ratings}: Props): JSX.Element {
         <p className="reviews__help">
           To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.
         </p>
-        <button className="reviews__submit form__submit button" type="submit" disabled>Submit</button>
+        <button className="reviews__submit form__submit button" type="submit">Submit</button>
       </div>
     </form>
   );
 }
 
 export default ReviewForm;
+
+// как мне отключить preventDefault у кнопки формы?
