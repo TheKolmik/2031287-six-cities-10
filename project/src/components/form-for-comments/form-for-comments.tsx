@@ -4,9 +4,10 @@ import RatingStar from '../rating-star/rating-star';
 
 type Props = {
   ratings: StarRating [];
+  addComment: (comment: string) => void;
 }
 
-function ReviewForm ({ratings}: Props): JSX.Element {
+function ReviewForm ({ratings, addComment}: Props): JSX.Element {
 
   const [comment, setComment] = useState<string>('');
 
@@ -19,7 +20,7 @@ function ReviewForm ({ratings}: Props): JSX.Element {
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    console.log('Данные формы', comment);
+    addComment(comment);
   };
 
   return (
