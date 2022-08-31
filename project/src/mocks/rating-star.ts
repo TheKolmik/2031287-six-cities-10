@@ -3,27 +3,27 @@ import { StarRating } from '../types/rating-star';
 export const ratingStar: StarRating[] = [
   {
     id: 0,
-    star: '1',
-    value: '1',
+    value: 5,
+    star: '5-stars',
   },
   {
     id: 1,
-    star: '2',
-    value: '2',
+    value: 4,
+    star: '4-stars',
   },
   {
     id: 2,
-    star: '3',
-    value: '3',
+    value: 3,
+    star: '3-stars',
   },
   {
     id: 3,
-    star: '4',
-    value: '4',
+    value: 2,
+    star: '2-stars',
   },
   {
     id: 4,
-    star: '5',
-    value: '5',
+    value: 1,
+    star: '1-stars',
   },
 ];

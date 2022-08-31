@@ -8,21 +8,21 @@ type Props = {
 // разобрать звездочки
 
 function RatingStar ({ratings}: Props): JSX.Element {
-  const {star, value} = ratings;
-  const [rating, setRating] = useState<string>('');
+  const {value, star} = ratings;
+  const [rating, setRating] = useState(0);
 
   const handleRatinngStar = () => {
     setRating(value);
-    console.log(value);
   };
 
   return (
     <>
-      <input onClick={handleRatinngStar}
+      <input
+        onChange={handleRatinngStar}
         className="form__rating-input visually-hidden" name="rating" value={value} id={star} type="radio"
       />
-      <label htmlFor="1-star" className="reviews__rating-label form__rating-label" title="terribly">
-        <svg className="form__star-image" width="37" height="33">
+      <label htmlFor={star} className="reviews__rating-label form__rating-label" title="perfect">
+        <svg className="form__star-image" width="37" height="33" style={value < rating ? {fill: '#ff9000'} : {}}>
           <use xlinkHref="#icon-star"></use>
         </svg>
       </label>

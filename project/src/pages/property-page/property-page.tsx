@@ -1,7 +1,6 @@
 import Logo from '../../components/Logo/Logo';
 import ReviewForm from '../../components/form-for-comments/form-for-comments';
 import {StarRating} from '../../types/rating-star';
-import RatingStar from '../../components/rating-star/rating-star';
 import ReviewList from '../../components/review-list/review-list';
 import Map from '../../components/map/map';
 import CardList from '../../components/card-list/card-list';
