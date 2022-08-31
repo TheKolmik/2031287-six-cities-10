@@ -1,5 +1,4 @@
 export type StarRating = {
-  id: number;
-  star: string;
+  id: string;
   value: number;
 };

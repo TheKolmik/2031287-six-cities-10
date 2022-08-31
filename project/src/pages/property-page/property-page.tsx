@@ -24,6 +24,13 @@ function PropertyPage ({ratings, offers, nearPoints, city}: Props): JSX.Element 
     setHoveredCard(offer);
   };
 
+  const [comments, setComments] = useState<string[]>([]);
+
+  const handleCommentAdd = (comment: any) => {
+    setComments([...comments, comment]);
+  };
+
+  console.log(comments);
 
   return (
     <div className="page">
@@ -172,10 +179,11 @@ function PropertyPage ({ratings, offers, nearPoints, city}: Props): JSX.Element 
                 </div>
               </div>
               <section className="property__reviews reviews">
-                <ReviewList/>
+                <ReviewList comments={comments}/>
 
                 <ReviewForm
                   ratings={ratings}
+                  handleCommentAdd={handleCommentAdd}
                 />
               </section>
             </div>
