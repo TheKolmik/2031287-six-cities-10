@@ -7,6 +7,7 @@ import { CITY } from '../../mocks/coordinates';
 import {useState} from 'react';
 import CityList from '../../components/city-list.tsx/city-list';
 
+
 type MainPageProps = {
   places: number;
   offers: Offer[];

@@ -5,9 +5,10 @@ import RatingStar from '../rating-star/rating-star';
 type Props = {
   ratings: StarRating [];
   addComment: (comment: string) => void;
+  addRating: (ratingStar: string) => void;
 }
 
-function ReviewForm ({ratings, addComment}: Props): JSX.Element {
+function ReviewForm ({ratings, addComment, addRating}: Props): JSX.Element {
 
   const [comment, setComment] = useState<string>('');
 
@@ -36,6 +37,7 @@ function ReviewForm ({ratings, addComment}: Props): JSX.Element {
             <div key={id}>
               <RatingStar
                 ratings={rating}
+                addRating={addRating}
               />
             </div>
           );

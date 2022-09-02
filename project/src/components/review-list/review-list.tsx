@@ -1,6 +1,6 @@
 import Review from '../review/review';
 
-function ReviewList ({comments}: any): JSX.Element {
+function ReviewList ({comments, ratingStars}: any): JSX.Element {
 
   return (
     <>
@@ -9,6 +9,7 @@ function ReviewList ({comments}: any): JSX.Element {
       <ul className="reviews__list">
 
         {comments.map( (comment: string[]) => <Review comment={comment}/> )}
+        {ratingStars.map( (rating: string[]) => <Review rating={rating}/> )}
       </ul>
     </>
   );

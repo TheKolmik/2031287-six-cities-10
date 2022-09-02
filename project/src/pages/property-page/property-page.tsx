@@ -20,9 +20,14 @@ function PropertyPage ({ratings, offers, nearPoints, city}: Props): JSX.Element 
   const [hoveredCard, setHoveredCard] = useState<Offer | null>(null);
 
   const [comments, setComments] = useState<any>([]);
+  const [ratingStars, setRatingStars] = useState<any>([]);
 
   const handleCardHover = (offer: Offer | null) => {
     setHoveredCard(offer);
+  };
+
+  const handleAddRating = (ratingStar:string) => {
+    setRatingStars([...ratingStars, ratingStar]);
   };
 
   const handleAddComment = (comment: string) => {
@@ -178,10 +183,12 @@ function PropertyPage ({ratings, offers, nearPoints, city}: Props): JSX.Element 
               <section className="property__reviews reviews">
                 <ReviewList
                   comments={comments}
+                  ratingStars={ratingStars}
                 />
                 <ReviewForm
                   ratings={ratings}
                   addComment={handleAddComment}
+                  addRating={handleAddRating}
                 />
               </section>
             </div>

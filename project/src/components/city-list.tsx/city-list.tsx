@@ -1,4 +1,12 @@
+import {useNavigate} from 'react-router-dom';
+import {AppRoute} from '../../const';
+import {useAppDispatch} from '../../hooks';
+import {toParis} from '../../store/action';
+
 function CityList (): JSX.Element {
+
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <section className="locations container">
